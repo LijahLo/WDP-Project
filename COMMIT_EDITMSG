@@ -1,2 +1,3 @@
-first commit
-git commit -m "Initial commit"
+first commit 
+git commit -m "inital commit"
+git push origin main 
