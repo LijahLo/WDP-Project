@@ -15,4 +15,5 @@ Our database schema was designed according to normalization principles to ensure
 
 This normalized design improves data integrity, reduces redundancy, and optimizes the structure for queries.
 ## SQL Tables 
-![SQL Tables](https://github.com/user-attachments/files/17757205/Elijah.London.SQL.Quieries.pdf)
+![SQL Tables](https://github.com/user-attachments/files/17757231/Elijah.London.SQL.Quieries.1.pdf)
+
