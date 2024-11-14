@@ -14,3 +14,5 @@ Our database schema was designed according to normalization principles to ensure
 - **3NF**: There are no transitive dependencies in the design. Each attribute in every table is dependent only on its respective primary key, without indirect relationships.
 
 This normalized design improves data integrity, reduces redundancy, and optimizes the structure for queries.
+## SQL Tables 
+![SQL Tables](https://github.com/user-attachments/files/17757205/Elijah.London.SQL.Quieries.pdf)
