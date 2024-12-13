@@ -2,9 +2,9 @@ const con = require("./db_connect")
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS Post (
       PostID INT NOT NULL AUTO_INCREMENT,
-      LoginID INT NOT NULL
-      RegisterID INT NOT NULL
-      USERID INT NOT NULL 
+      LoginID INT NOT NULL,
+      RegisterID INT NOT NULL,
+      USERID INT NOT NULL, 
       CONSTRAINT PostPK PRIMARY KEY(PostID)
     );`
   

@@ -14,7 +14,7 @@ Thumbs.db
 # Ignore Visual Studio Code settings
 .vscode/
 
-# Python cache files
+# Python cache files 
 __pycache__/
 *.py[cod]
  
