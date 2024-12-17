@@ -1,6 +1,20 @@
 const express = require("express")
 const User = require("../models/user")
 const router = express.Router()
+async function fetchData(route = '', data = {}, methodType) {
+  const response = await fetch(`http://localhost:3000${route}`, {
+    method: methodType,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: methodType === 'GET' ? null : JSON.stringify(data)
+  });
+  if (response.ok) {
+    return await response.json();
+  } else {
+    throw await response.json();
+  }
+}
 
 router
 .get('/getUsers', async (req, res) => {
@@ -47,5 +61,45 @@ router
       res.status(401).send({message: err.message})
     }
   })
-  
+  async function getUsers() {
+    try {
+      const users = await fetchData('/getUsers', {}, 'GET');
+      console.log('Fetched Users:', users);
+    } catch (error) {
+      console.error('Error Fetching Users:', error);
+    }
+  }
+  async function registerUser(userData) {
+    try {
+      const newUser = await fetchData('/register', userData, 'POST');
+      console.log('User Registered:', newUser);
+    } catch (error) {
+      console.error('Error Registering User:', error);
+    }
+  }
+  async function loginUser(loginData) {
+    try {
+      const loggedInUser = await fetchData('/login', loginData, 'POST');
+      console.log('Logged In:', loggedInUser);
+    } catch (error) {
+      console.error('Error Logging In:', error);
+    }
+  }
+  async function updateUserEmail(updatedData) {
+    try {
+      const updatedUser = await fetchData('/update', updatedData, 'PUT');
+      console.log('User Email Updated:', updatedUser);
+    } catch (error) {
+      console.error('Error Updating Email:', error);
+    }
+  }
+  async function deleteUser(deleteData) {
+    try {
+      const result = await fetchData('/delete', deleteData, 'DELETE');
+      console.log('User Deleted:', result);
+    } catch (error) {
+      console.error('Error Deleting User:', error);
+    }
+  }
+          
   module.exports = router

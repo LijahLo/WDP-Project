@@ -47,4 +47,46 @@ const router = express.Router()
     }
   })
   
+  async function getPosts() {
+    try {
+      const posts = await fetchData('/getpost', {}, 'GET');
+      console.log('Fetched Posts:', posts);
+    } catch (error) {
+      console.error('Error Fetching Posts:', error);
+    }
+  }
+  async function registerPost(postData) {
+    try {
+      const newPost = await fetchData('/register', postData, 'POST');
+      console.log('Post Registered:', newPost);
+    } catch (error) {
+      console.error('Error Registering Post:', error);
+    }
+  }
+  async function loginPost(loginData) {
+    try {
+      const loggedInPost = await fetchData('/login', loginData, 'POST');
+      console.log('Logged In:', loggedInPost);
+    } catch (error) {
+      console.error('Error Logging In:', error);
+    }
+  }
+  async function updatePost(updatedData) {
+    try {
+      const updatedPost = await fetchData('/update', updatedData, 'PUT');
+      console.log('Post Updated:', updatedPost);
+    } catch (error) {
+      console.error('Error Updating Post:', error);
+    }
+  }
+  async function deletePost(deleteData) {
+    try {
+      const result = await fetchData('/delete', deleteData, 'DELETE');
+      console.log('Post Deleted:', result);
+    } catch (error) {
+      console.error('Error Deleting Post:', error);
+    }
+  }
+          
+
   module.exports = router
