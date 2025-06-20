@@ -111,7 +111,8 @@ font-family: fantasy;
 position: relative; 
 } 
 .reaction-box{
-position: absolute; 
+position: absolute;
+height: fit-content; 
 display:none;
 } 
 .like-button:hover .reaction-box{
@@ -120,11 +121,12 @@ display:none;
 .reaction-icon {
   width: 36px; 
   height: 36px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   word-spacing: normal;
 } 
 .likes-count {
   font-style: calc(); 
-  font-family: monospace;
+  font-family: monospace; 
+  height: auto;
 }
