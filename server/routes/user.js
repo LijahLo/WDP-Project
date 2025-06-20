@@ -15,7 +15,7 @@ async function fetchData(route = '', data = {}, methodType) {
     throw await response.json();
   }
 }
-
+export{fetchData};
 router
 .get('/getUsers', async (req, res) => {
     try {

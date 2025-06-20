@@ -6,7 +6,7 @@ app.use(express.json()); // parses JSON bodies
 
 const userRoutes = require("./server/routes/user")
 const postRoutes = require("./server/routes/post")
-
+const LikesReactions = require("./server/routes/LikesReactions")
 //CORS middleware
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");  

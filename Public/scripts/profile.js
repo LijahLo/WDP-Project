@@ -1,0 +1,12 @@
+import{getCurrentUser} from "./main.js"; 
+let user = getCurrentUser(); 
+if(!user) window.location.href = "login.html"; 
+let profile = document.getElementById("profile"); 
+profile.innerHTML = `
+<h2> Nice to see you, ${user.userName}!</h2>
+<div>
+    <p class ="error"></p>
+    <button class ="btn" id= "edit">Edit Info</button>
+    <button class ="btn" id= "delete">Delete Account</button>
+</div>
+`;
