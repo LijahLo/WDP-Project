@@ -1,3 +1,4 @@
+
 const express = require("express")
 const User = require("../models/user")
 const router = express.Router()
@@ -15,7 +16,6 @@ async function fetchData(route = '', data = {}, methodType) {
     throw await response.json();
   }
 }
-export{fetchData};
 router
 .get('/getUsers', async (req, res) => {
     try {

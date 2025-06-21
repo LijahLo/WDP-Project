@@ -80,8 +80,8 @@ body {
 }
 
 p {
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 1px;
+    color: #ffffff;
 }
 
 footer {
@@ -108,10 +108,10 @@ position: relative;
 } 
 .like-button{
 font-family: fantasy;   
-position: relative; 
+position: center; 
 } 
 .reaction-box{
-position: absolute;
+position: relative;
 height: fit-content; 
 display:none;
 } 
@@ -122,7 +122,7 @@ display:none;
   width: 36px; 
   height: 36px;
   border-radius: 10%;
-  object-fit: cover;
+  object-fit:contain;
   word-spacing: normal;
 } 
 .likes-count {

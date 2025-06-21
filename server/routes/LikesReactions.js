@@ -1,7 +1,21 @@
 const express = require("express")
 const LikesReactions = require("../models/LikesReactions")
 const router = express.Router() 
-
+async function fetchData(route = '', data = {}, methodType) {
+  const response = await fetch(`http://localhost:3000${route}`, {
+    method: methodType,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: methodType === 'GET' ? null : JSON.stringify(data)
+  });
+  if (response.ok) {
+    return await response.json();
+  } else {
+    throw await response.json();
+  }
+}
+router
 .get('/getLikesReactions', async (req, res) => {
     try {
       const LikesReactions = await this.LikesReactions.getAllLikesReactions()
@@ -87,6 +101,8 @@ const router = express.Router()
       console.error('Error Deleting LikesReactions:', error);
     }
   }
-          
+ router 
+.get("/all", async (req, res) => { /* … */ })
+.post("/add", async (req, res) => { /* … */ });       
 
   module.exports = router

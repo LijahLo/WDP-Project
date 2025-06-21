@@ -1,7 +1,21 @@
 const express = require("express")
 const post = require("../models/post")
 const router = express.Router() 
-
+async function fetchData(route = '', data = {}, methodType) {
+  const response = await fetch(`http://localhost:3000${route}`, {
+    method: methodType,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: methodType === 'GET' ? null : JSON.stringify(data)
+  });
+  if (response.ok) {
+    return await response.json();
+  } else {
+    throw await response.json();
+  }
+}
+router
 .get('/getpost', async (req, res) => {
     try {
       const post = await this.post.getAllpost()
