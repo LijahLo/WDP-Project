@@ -1,3 +1,12 @@
+async function login(username,password) {
+    const user = await getUser(username);
+    if(user) throw Error('Username already in use');
+
+const isMatch= await bcrypt.compare(password, user.password);
+if(!isMatch) throw Error('Wrong password'); 
+ return user._doc;
+}
+
 import{fetchData} from "./main.js";
 function login(e){
     e.preventDefault()

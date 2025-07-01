@@ -1,4 +1,4 @@
-
+const bcrypt = require('bcryptjs');
 import mongoose from 'mongoose';
 
 const { Schema, model } = mongoose; // Destructure Schema and model from mongoose
